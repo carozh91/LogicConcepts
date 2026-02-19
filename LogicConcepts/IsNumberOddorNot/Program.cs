@@ -1,7 +1,8 @@
 ﻿
 using Shared;
 
-var numberString = string.Empty;
+var answer = string.Empty;
+var options = new List<string>() { "s", "n" };
 do
 {
     var number = ConsoleExtension.GetInt("Ingresa un número entero: ");
@@ -17,7 +18,12 @@ do
         {
             Console.WriteLine($"El número {number} es impar");
         }
+    do
+    {
+        answer = ConsoleExtension.GetValidOptions("Deseas continuar? {s}i, {n}o: ", options);
+
+    } while (options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
     
 
    
-}while (true);
+}while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
