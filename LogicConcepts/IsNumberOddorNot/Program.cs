@@ -2,10 +2,12 @@
 using Shared;
 
 var answer = string.Empty;
-var options = new List<string>() { "s", "n" };
+var options = new List<string> { "s", "n" };
+
 do
 {
     var number = ConsoleExtension.GetInt("Ingresa un número entero: ");
+
     if(number == 0)
     {
         continue;
@@ -20,9 +22,9 @@ do
         }
     do
     {
-        answer = ConsoleExtension.GetValidOptions("Deseas continuar? {s}i, {n}o: ", options);
+        answer = ConsoleExtension.GetValidOptions("Deseas continuar? [s]i, [n]o: ", options);
 
-    } while (options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+    } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
     
 
    
