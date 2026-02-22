@@ -5,9 +5,20 @@ var options = new List<string> { "s", "n" };
 
 do
 {
+    Console.WriteLine("Ingrese 3 número diferentes");
     var a = ConsoleExtension.GetInt("Ingrese primer número: ");
     var b = ConsoleExtension.GetInt("Ingrese segundo número: ");
+    if (a == b)
+    {
+        Console.WriteLine("Los números son iguales");
+        continue;
+    }
     var c = ConsoleExtension.GetInt("Ingrese tercer número: ");
+    if (a ==c || b == c)
+    {
+        Console.WriteLine("Los números son iguales");
+        continue;
+    }
 
     if (a > b && b > c)
     {
